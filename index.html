@@ -5,22 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BaWlab | Artisan Keycaps</title>
     <meta
-  name="description"
-  content="BaWlab creates handmade artisan keycaps in Korea. Built on contrast."
+      name="description"
+      content="BaWlab creates handmade artisan keycaps in Korea. Built on contrast."
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-      <header class="site-header">
-    <a class="logo" href="#" aria-label="BaWlab home">
-  <img src="images/BaWlab_logo_png_nonbackground.png" alt="BaWlab logo" />
-</a>
+    <header class="site-header">
+      <a class="logo" href="#" aria-label="BaWlab home">
+        <img src="images/BaWlab_logo_png_nonbackground.png" alt="BaWlab logo" />
+      </a>
 
-  <nav class="nav-links" aria-label="Main navigation">
-    <a href="#about">About</a>
-    <a href="#process">Process</a>
-  </nav>
-</header>
+      <div class="header-right">
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#about">About</a>
+          <a href="#process">Process</a>
+          <a href="#monthly">Collection</a>
+          <a href="#custom">Custom</a>
+        </nav>
+      </div>
+    </header>
 
     <main>
       <!--
@@ -37,23 +41,24 @@
         />
 
         <div class="hero-content">
-          <p class="eyebrow">Black and White laboratory</p>
+          <p class="eyebrow">
+            <span class="eyebrow-black">Black</span> and
+            <span class="eyebrow-white">White</span>
+            <span class="eyebrow-laboratory">laboratory</span>
+          </p>
           <h1 id="hero-title">
             <span class="text-purple">Artisan</span>
             <span class="text-orange">Keycap</span>
           </h1>
           <p class="hero-copy">
-            Handmade artisan keycaps made in Korea. <br> "Built on contrast"
+            Handmade artisan keycaps made in Korea. <br />"Built on contrast"
           </p>
 
-          <!--
-            PURCHASE LINKS
-            Replace the href values below with your real purchase URLs.
-          -->
+          <!-- Purchase links. Replace href values with your real shop links. -->
           <div class="button-group" aria-label="Purchase links">
             <a
               class="button button-primary"
-              href="https://example.com/kr"
+              href="https://smartstore.naver.com/bawlab_artisankeycap/products/13637056621"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -77,89 +82,269 @@
         />
       </section>
 
-<section id="about" class="section section-about" aria-labelledby="about-title">
-  <div class="section-inner">
-    <p class="section-label">About BaWlab</p>
-    <h2 id="about-title">Built around contrast, balanced by hand.</h2>
-    <p>
-      BaWlab stands for Black and White laboratory.<br>Each artisan keycap captures
-      opposing moods — darkness and light, calm and energy, depth and warmth, and beyond —
-      in a small transparent world.
-    </p>
-  </div>
-</section>
-
-<section id="process" class="section section-process" aria-labelledby="process-title">
-  <div class="section-inner">
-    <p class="section-label">Making Process</p>
-    <h2 id="process-title">Crafted by hand, one focused step at a time.</h2>
-
-    <div class="process-carousel">
-      <button class="carousel-button carousel-button-prev" type="button" aria-label="Previous process">
-        ‹
-      </button>
-
-      <div class="process-window">
-        <div class="process-track">
-          <article class="process-card process-card-image" style="--bg-image: url('images/process-design.png');">
-            <span class="process-number">01</span>
-            <h3>Concept & Design</h3>
-            <p>
-              Each keycap begins with a concept, character, and silhouette designed
-              around both visual balance and keycap fit.
-            </p>
-          </article>
-
-          <article class="process-card process-card-image" style="--bg-image: url('images/process-painting.png');">
-            <span class="process-number">02</span>
-            <h3>Hand Painting & Air Brushing</h3>
-            <p>
-              Small figures and details are painted by hand, combining brush work
-              and air brushing for controlled color depth.
-            </p>
-          </article>
-
-          <article class="process-card process-card-image" style="--bg-image: url('images/process-mold.png');">
-            <span class="process-number">03</span>
-            <h3>Mold Making & Casting</h3>
-            <p>
-              Molds are made for transparent dome casting, then resin is carefully
-              poured to preserve clarity and shape.
-            </p>
-          </article>
-
-          <article class="process-card process-card-image" style="--bg-image: url('images/process-finishing.png');">
-            <span class="process-number">04</span>
-            <h3>Finishing & QC</h3>
-            <p>
-              Each piece is trimmed, inspected, polished, and checked before final
-              packaging.
-            </p>
-          </article>
-
-          <article class="process-card process-card-image" style="--bg-image: url('images/process-packaging.png');">
-            <span class="process-number">05</span>
-            <h3>Packaging</h3>
-            <p>
-              Finished keycaps are packed with care to protect the surface and
-              complete the BaWlab experience.
-            </p>
-          </article>
+      <section id="about" class="section section-about" aria-labelledby="about-title">
+        <div class="section-inner">
+          <p class="section-label">About BaWlab</p>
+          <h2 id="about-title">Built on contrast, balanced by hand.</h2>
+          <p>
+            BaWlab is short for Black and White Laboratory.<br />Each handmade
+            keycap holds opposing moods:<br />
+            <span class="contrast-purple">Dark</span> and
+            <span class="contrast-orange">Light</span>,
+            <span class="contrast-purple">Night</span> and
+            <span class="contrast-orange">Day</span>,
+            <span class="contrast-purple">Calm</span> and
+            <span class="contrast-orange">Energy</span>,<br />
+            sealed inside a small transparent world.
+          </p>
         </div>
-      </div>
+      </section>
 
-      <button class="carousel-button carousel-button-next" type="button" aria-label="Next process">
-        ›
-      </button>
-    </div>
-  </div>
-</section>
+      <section id="process" class="section section-process" aria-labelledby="process-title">
+        <div class="section-inner">
+          <p class="section-label">Making Process</p>
+          <h2 id="process-title">Crafted by hand, one focused step at a time.</h2>
+
+          <div class="process-carousel">
+            <button
+              class="carousel-button carousel-button-prev"
+              type="button"
+              aria-label="Previous process"
+            >
+              &larr;
+            </button>
+
+            <div class="process-window">
+              <div class="process-track">
+                <article
+                  class="process-card process-card-image"
+                  style="--bg-image: url('images/process-design.png');"
+                >
+                  <span class="process-number">01</span>
+                  <h3>Concept & Design</h3>
+                  <p>Ideas become characters, stories, and silhouettes.</p>
+                </article>
+
+                <article
+                  class="process-card process-card-image"
+                  style="--bg-image: url('images/process-figure making.png');"
+                >
+                  <span class="process-number">02</span>
+                  <h3>Figure Making</h3>
+                  <p>Each tiny figure is shaped to fit its own world.</p>
+                </article>
+
+                <article
+                  class="process-card process-card-image"
+                  style="--bg-image: url('images/process-painting.png');"
+                >
+                  <span class="process-number">03</span>
+                  <h3>Hand Painting</h3>
+                  <p>Colors and details are built slowly by hand.</p>
+                </article>
+
+                <article
+                  class="process-card process-card-image"
+                  style="--bg-image: url('images/process-mold.png');"
+                >
+                  <span class="process-number">04</span>
+                  <h3>Mold & Casting</h3>
+                  <p>Clear resin is cast to preserve depth and shape.</p>
+                </article>
+
+                <article
+                  class="process-card process-card-image"
+                  style="--bg-image: url('images/process-finishing.png');"
+                >
+                  <span class="process-number">05</span>
+                  <h3>Finishing & QC</h3>
+                  <p>Each piece is trimmed, polished, and checked by hand.</p>
+                </article>
+
+                <article
+                  class="process-card process-card-image"
+                  style="--bg-image: url('images/process-packaging.png');"
+                >
+                  <span class="process-number">06</span>
+                  <h3>Packaging</h3>
+                  <p>Finished keycaps are packed carefully for delivery.</p>
+                </article>
+              </div>
+            </div>
+
+            <button
+              class="carousel-button carousel-button-next"
+              type="button"
+              aria-label="Next process"
+            >
+              &rarr;
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="monthly" class="section section-monthly" aria-labelledby="monthly-title">
+        <div class="section-inner">
+          <p class="section-label">BaWlab Original Collection</p>
+          <h2 id="monthly-title">Original releases, renewed when each story sells out.</h2>
+          <p>
+            Small-run artisan keycaps. When one collection sells out, the next
+            story begins.
+          </p>
+
+          <div class="collection-carousel">
+            <button
+              class="carousel-button collection-button-prev"
+              type="button"
+              aria-label="Previous collection"
+            >
+              &larr;
+            </button>
+
+            <div class="collection-window">
+              <div class="collection-track">
+                <article class="collection-card collection-card-featured">
+                  <img
+                    src="images/collection-original-01.png"
+                    alt="Demon Cat and Angel Cat artisan keycaps"
+                  />
+                  <div class="collection-card-copy">
+                    <span class="collection-tag">ORIGINAL 01</span>
+                    <h3>Demon Cat &amp; Angel Cat</h3>
+                    <p class="collection-description">
+                      Two chubby cats born from opposite moods.<br />
+                      Dark and bold. Warm and calm.<br />
+                      Sealed inside a tiny clear world.
+                    </p>
+                    <div class="feature-tags" aria-label="Collection features">
+                      <span>DEMON HORN</span>
+                      <span>ANGEL HALO</span>
+                      <span>CLEAR RESIN DOME</span>
+                      <span>SMALL-RUN RELEASE</span>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="collection-card collection-card-coming">
+                  <div class="coming-soon-text">COMING SOON</div>
+                  <div class="collection-card-copy">
+                    <span class="collection-tag">COMING SOON</span>
+                    <h3>Next Original</h3>
+                    <p>A new story is being prepared.</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <button
+              class="carousel-button collection-button-next"
+              type="button"
+              aria-label="Next collection"
+            >
+              &rarr;
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="custom" class="section section-custom" aria-labelledby="custom-title">
+        <div class="section-inner">
+          <p class="section-label">BaWlab Custom Collection</p>
+          <h2 id="custom-title">One-off pieces, revealed when the time is right.</h2>
+          <p>
+            Custom Collection showcases one-of-a-kind works, experiments, and
+            special pieces released only when BaWlab chooses to reveal them.
+          </p>
+
+          <div class="custom-carousel">
+            <button
+              class="carousel-button custom-button-prev"
+              type="button"
+              aria-label="Previous custom collection"
+            >
+              &larr;
+            </button>
+
+            <div class="custom-window">
+              <div class="custom-track">
+                <article class="collection-card custom-card">
+                  <div class="custom-card-media" data-image-path="images/custom-01.png">
+                    <!-- Replace this placeholder with:
+                    <img src="images/custom-01.png" alt="Custom collection piece 01" />
+                    -->
+                    <span class="coming-soon-text">COMING SOON</span>
+                  </div>
+                  <div class="collection-card-copy">
+                    <span class="collection-tag">CUSTOM 01</span>
+                    <h3>Coming Soon</h3>
+                    <p class="collection-description">
+                      A one-of-a-kind custom piece will be revealed here.
+                    </p>
+                    <div class="feature-tags" aria-label="Custom collection features">
+                      <span>ONE-OFF</span>
+                      <span>CUSTOM WORK</span>
+                      <span>COMING SOON</span>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="collection-card custom-card">
+                  <div class="custom-card-media" data-image-path="images/custom-02.png">
+                    <!-- Replace this placeholder with:
+                    <img src="images/custom-02.png" alt="Custom collection piece 02" />
+                    -->
+                    <span class="coming-soon-text">COMING SOON</span>
+                  </div>
+                  <div class="collection-card-copy">
+                    <span class="collection-tag">CUSTOM 02</span>
+                    <h3>Coming Soon</h3>
+                    <p class="collection-description">
+                      Another future custom piece is being prepared.
+                    </p>
+                    <div class="feature-tags" aria-label="Custom collection features">
+                      <span>ONE-OFF</span>
+                      <span>SPECIAL PIECE</span>
+                      <span>COMING SOON</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <button
+              class="carousel-button custom-button-next"
+              type="button"
+              aria-label="Next custom collection"
+            >
+              &rarr;
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-contact" aria-labelledby="contact-title">
+        <div class="section-inner contact-inner">
+          <p class="section-label">Contact</p>
+          <h2 id="contact-title">
+            Follow BaWlab for new releases and behind-the-scenes updates.
+          </h2>
+          <a
+            class="button button-primary"
+            href="https://www.instagram.com/bawlab.studio/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open BaWlab Instagram"
+          >
+            Instagram
+          </a>
+        </div>
+      </section>
     </main>
 
-<footer class="site-footer">
-  <p>© 2026 BaWlab</p>
-</footer>
+    <footer class="site-footer">
+      <p>&copy; 2026 BaWlab</p>
+    </footer>
 
-	<script src="script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
