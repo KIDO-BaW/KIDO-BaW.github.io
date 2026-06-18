@@ -1,11 +1,4 @@
-const track = document.querySelector(".process-track");
-const cards = Array.from(document.querySelectorAll(".process-card"));
-const prevButton = document.querySelector(".carousel-button-prev");
-const nextButton = document.querySelector(".carousel-button-next");
-
-let currentIndex = 0;
-
-function getCardsPerView() {
+function getProcessCardsPerView() {
   if (window.innerWidth <= 560) {
     return 1;
   }
@@ -17,43 +10,83 @@ function getCardsPerView() {
   return 3;
 }
 
-function updateCarousel() {
-  if (!track || cards.length === 0 || !prevButton || !nextButton) {
-    return;
+function createCarousel(options) {
+  const track = document.querySelector(options.trackSelector);
+  const prevButton = document.querySelector(options.prevSelector);
+  const nextButton = document.querySelector(options.nextSelector);
+
+  if (!track || !prevButton || !nextButton) {
+    return null;
   }
 
-  const cardsPerView = getCardsPerView();
-  const maxIndex = Math.max(cards.length - cardsPerView, 0);
+  const cards = Array.from(track.querySelectorAll(options.cardSelector));
+  let currentIndex = 0;
 
-  if (currentIndex > maxIndex) {
-    currentIndex = maxIndex;
+  function update() {
+    if (cards.length === 0) {
+      return;
+    }
+
+    const cardsPerView = options.getCardsPerView();
+    const maxIndex = Math.max(cards.length - cardsPerView, 0);
+
+    if (currentIndex > maxIndex) {
+      currentIndex = maxIndex;
+    }
+
+    if (currentIndex < 0) {
+      currentIndex = 0;
+    }
+
+    const cardWidth = cards[0].offsetWidth;
+    const trackStyle = window.getComputedStyle(track);
+    const gap = parseFloat(trackStyle.columnGap || trackStyle.gap) || 18;
+    const moveAmount = currentIndex * (cardWidth + gap);
+
+    track.style.transform = `translateX(-${moveAmount}px)`;
+
+    prevButton.disabled = currentIndex === 0;
+    nextButton.disabled = currentIndex === maxIndex;
   }
 
-  if (currentIndex < 0) {
-    currentIndex = 0;
-  }
+  prevButton.addEventListener("click", () => {
+    currentIndex -= 1;
+    update();
+  });
 
-  const card = cards[0];
-  const cardWidth = card.offsetWidth;
-  const gap = 18;
-  const moveAmount = currentIndex * (cardWidth + gap);
+  nextButton.addEventListener("click", () => {
+    currentIndex += 1;
+    update();
+  });
 
-  track.style.transform = `translateX(-${moveAmount}px)`;
-
-  prevButton.disabled = currentIndex === 0;
-  nextButton.disabled = currentIndex === maxIndex;
+  update();
+  return { update };
 }
 
-prevButton?.addEventListener("click", () => {
-  currentIndex -= 1;
-  updateCarousel();
+const carousels = [
+  createCarousel({
+    trackSelector: ".process-track",
+    cardSelector: ".process-card",
+    prevSelector: ".carousel-button-prev",
+    nextSelector: ".carousel-button-next",
+    getCardsPerView: getProcessCardsPerView,
+  }),
+  createCarousel({
+    trackSelector: ".collection-track",
+    cardSelector: ".collection-card",
+    prevSelector: ".collection-button-prev",
+    nextSelector: ".collection-button-next",
+    getCardsPerView: () => 1,
+  }),
+  createCarousel({
+    trackSelector: ".custom-track",
+    cardSelector: ".custom-card",
+    prevSelector: ".custom-button-prev",
+    nextSelector: ".custom-button-next",
+    getCardsPerView: () => 1,
+  }),
+].filter(Boolean);
+
+window.addEventListener("resize", () => {
+  carousels.forEach((carousel) => carousel.update());
 });
-
-nextButton?.addEventListener("click", () => {
-  currentIndex += 1;
-  updateCarousel();
-});
-
-window.addEventListener("resize", updateCarousel);
-
-updateCarousel();
